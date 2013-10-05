@@ -1,1 +1,51 @@
 /* Denna fil får du editera för att lösa uppgiften. Du får INTE ändra i html-filen. */
+
+/*Maxvidd till 600px (bakgrundsbild 600*200px). Centrering av containern.
+Navigering horisontell med floatade li-taggar med iliggande a-taggar som blockelement för ökad klickyta.
+*/
+
+/*LAYOUT*/
+ #container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#topbar {
+    text-align: right;
+    height: 220px;
+    background-image: url("pics/coffey.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+#menu>a {
+    display:none;
+}
+#menu ul {
+    overflow: auto;
+}
+#menu li {
+    float: left;
+    padding: 0.5em 1em;
+}
+#menu li a {
+    display: block;
+    text-decoration: none;
+}
+#maincontent, #subcontent, #maincontent img {
+    float: left;
+}
+#maincontent {
+    width: 55%;
+    border-right: 0.1em #ccc dashed;
+}
+#subcontent {
+    width: 35%;
+}
+#bottomcontent {
+    clear: both;
+}
+ul{
+    padding-left: 0;
+}
+li {
+    list-style-type: none;
+}
