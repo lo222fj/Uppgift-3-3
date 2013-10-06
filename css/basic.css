@@ -1,19 +1,30 @@
 /* Denna fil får du editera för att lösa uppgiften. Du får INTE ändra i html-filen. */
 
-/*Maxvidd till 600px (bakgrundsbild 600*200px). Centrering av containern.
+/*Maxvidd container 960px med liten marginal för färgtoningen utanför bordern.
+Bakgrundsbild (600*200px) sätts med fast höjd så att texten ovanför får plats. Bilden positioneras på botten. 
+FRÅGA: Finns mer flexibel lösning som se normal ut så att inte tomrum bildas mellan bild och text vid resizing?
+Bodyn får maxvidd lite större och centreras med margin auto.
 Navigering horisontell med floatade li-taggar med iliggande a-taggar som blockelement för ökad klickyta.
 */
 
 /*LAYOUT*/
- #container {
-    max-width: 600px;
+ html, body, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    max-width: 1020px;
     margin: 0 auto;
+}
+#container {
+    max-width: 960px;
 }
 #topbar {
     text-align: right;
     height: 220px;
     background-image: url("pics/coffey.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: bottom;
 }
 #menu>a {
@@ -24,18 +35,19 @@ Navigering horisontell med floatade li-taggar med iliggande a-taggar som blockel
 }
 #menu li {
     float: left;
-    padding: 0.5em 1em;
+    margin-right: 0.1em;
 }
 #menu li a {
     display: block;
     text-decoration: none;
+    padding: 0.5em 1em;
 }
 #maincontent, #subcontent, #maincontent img {
     float: left;
 }
 #maincontent {
     width: 55%;
-    border-right: 0.1em #ccc dashed;
+    border-right: 0.1em #c0c0c0 dashed;
 }
 #subcontent {
     width: 35%;
@@ -43,9 +55,59 @@ Navigering horisontell med floatade li-taggar med iliggande a-taggar som blockel
 #bottomcontent {
     clear: both;
 }
-ul{
-    padding-left: 0;
+ul {
+    padding: 0.5em 0 0 0;
 }
 li {
     list-style-type: none;
+}
+/*COLORS 
+
+background-colors:
+body: #fcfaf4
+#topbar, #menu: #51473D
+#content, .active: #EAE7D2
+#menu li: #797066
+#menu a:hover: #9c9084
+
+fonts:
+Text över bakgrundsbild och text i navigering: #EAE7D
+(#topbar, #menu li a2)
+container
+Vänster kolumn, löptext i hö kolumn, footer samt text i aktivt menyval: #797066
+(#maincontent, #menu .active a, #subcontent p, #bottomcontent)
+Höger kolumns rubriker och länkar: #51473D 
+(#subcontent h1, #subcontent h2, #subcontent li>a:) 
+
+border:
+#container: #cecab9
+#maincontent border-right: #c0c0c0
+
+*/
+body{
+        background-color: #fcfaf4;
+}
+#topbar, #menu {
+    background-color: #51473D;
+}
+#menu li {
+    background-color: #797066
+}
+#content, #menu ul .active {
+    background-color:#EAE7D2;
+}
+#menu a:hover {
+    background-color: #9c9084
+}
+#topbar, #menu li a {
+    color: #EAE7D2;
+}
+#maincontent, #menu .active a, #subcontent p, #bottomcontent {
+    color: #797066;
+}
+#subcontent h1, #subcontent h2, #subcontent li>a {
+    color: #51473D;
+}
+#container {
+    border: 0.2em #cecab9 solid;
 }
