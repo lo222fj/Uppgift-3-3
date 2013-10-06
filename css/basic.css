@@ -1,15 +1,27 @@
 /* Denna fil får du editera för att lösa uppgiften. Du får INTE ändra i html-filen. */
 
-/*Maxvidd container 600px efter bakgrundsbild. Bakgrundsbild (600*200px) sätts med fast höjd så att texten 
-ovanför får plats. Bilden positioneras på botten. Vidden sätts som bilden eftersom texten nere till höger inte
-verkar utdragen.
+/*Maxvidd container sätts till bredden på bakgrundsbilden (600*200px) eftersom texten nere till höger inte
+verkar utdragen. Bakgrundsbildens höjd sätts med fast höjd som är lika med bildens d v s 200px medan
+hela topbar sätts 20 px högre så att texten ovanför får plats när bilden positioneras på botten. 
 FRÅGA: Finns mer flexibel lösning än att sätta fast höjd? Om man inte sätter fast höjd så bildas tomrum mellan bild och text vid resizing.
+
 Navigering horisontell med floatade li-taggar med iliggande a-taggar som blockelement för ökad klickyta.
+
+De två kolumnerna sätts i 55 resp 35% bredd.
+
 Färger togs fram från bilderna i kulor och photoshop. Jag kollade flera färger i båda för jag tycker mina färger
 ser gråare ut än de bifogade bilderna. Men när båda analyserar dem till samma hex-kod så gissar jag att det är rätt.
+De olika färgerna på texten i den högra kolumnen var lite knöliga att få rätt på. Och varför har man två olika
+h1-or på samma sida som dessutom har olika färg och storlek...? Det gjorde det omöljligt
+att sätta marginaler på rubriken i em om man vill ha dem på samma höjd. Tog därför
+bort marginaler på rubrikerna och lät topmarginal på p-taggarna under göra mellanrummet
+mellan rubrik och stycke. En toppmarginal på divarna main- och subcontent ger
+mellanrummet mellan navigering och h1-or. Maginalen gör också att skiljelinjen,
+mellan kolumnerna, en vänsterborder på subcontent, inte går högre upp än h1-an.
 */
 
-/*LAYOUT*/
+/*LAYOUT
+placeringar (ex float) och ytor (marginaler och padding)*/
  html, body, ul {
     margin: 0;
     padding: 0;
@@ -26,39 +38,35 @@ ser gråare ut än de bifogade bilderna. Men när båda analyserar dem till samm
     background-size: 100% 200px;
     background-position: bottom;
 }
-#menu>a {
-    display:none;
-}
 #menu ul {
-    overflow: auto;
+    padding: 0.5em 0 0 0.5em;
 }
 #menu li {
     float: left;
     margin-right: 0.1em;
 }
 #menu li a {
-    display: block;
-    text-decoration: none;
     padding: 0.5em 1em;
 }
-#maincontent, #subcontent, #maincontent img {
-    float: left;
-}
 #maincontent {
+    float: left;
     width: 55%;
-    border-right: 0.1em #c0c0c0 dashed;
+    padding: 0 0.5em;
+    margin-top: 2em;
+}
+#maincontent img {
+    float: left;
+    margin: 1em 0.2em 0 0;
 }
 #subcontent {
+    float: left;
     width: 35%;
+    padding: 0 0.5em;
+    margin-top: 2em;
 }
 #bottomcontent {
     clear: both;
-}
-ul {
-    padding: 0.5em 0 0 0.5em;
-}
-li {
-    list-style-type: none;
+    padding: 0.5em 0 1em 0.5em;
 }
 /*COLORS 
 
@@ -108,6 +116,56 @@ border:
 #subcontent h1, #subcontent h2, #subcontent li>a {
     color: #51473D;
 }
+/*Utseende (ex typsnitt, ramar, syns elle inte*/
+ body {
+    font-family: Verdana, Sans-serif;
+    line-height: 130%;
+    font-size:1em;
+}
+h1, h2 {
+    font-family:"Times New Roman", serif;
+    font-weight: normal;
+   }
+   h1{
+        margin: 0;
+   }
+   h2{
+       margin: 2em 0 0 0;
+   }
+li {
+    list-style-type: none;
+}
 #container {
-    border: 0.2em #cecab9 solid;
+    border: 0.1em #cecab9 solid;
+}
+#menu>a {
+    display:none;
+}
+#menu ul {
+    overflow: auto;
+}
+#menu li a {
+    display: block;
+    text-decoration: none;
+}
+#maincontent {
+    border-right: 0.1em #c0c0c0 dashed;
+}
+#maincontent p {
+    font-size: 0.8em;
+}
+#subcontent {
+}
+#subcontent h1, h2 {
+    font-size: 1em;
+}
+#subcontent p {
+    font-size: 0.6em;
+}
+#subcontent a {
+    font-size: 0.8em;
+}
+#bottomcontent {
+    font-size: 0.6em;
+    font-style: italic;
 }
