@@ -1,10 +1,12 @@
 /* Denna fil får du editera för att lösa uppgiften. Du får INTE ändra i html-filen. */
 
-/*Maxvidd container 960px med liten marginal för färgtoningen utanför bordern.
-Bakgrundsbild (600*200px) sätts med fast höjd så att texten ovanför får plats. Bilden positioneras på botten. 
-FRÅGA: Finns mer flexibel lösning som se normal ut så att inte tomrum bildas mellan bild och text vid resizing?
-Bodyn får maxvidd lite större och centreras med margin auto.
+/*Maxvidd container 600px efter bakgrundsbild. Bakgrundsbild (600*200px) sätts med fast höjd så att texten 
+ovanför får plats. Bilden positioneras på botten. Vidden sätts som bilden eftersom texten nere till höger inte
+verkar utdragen.
+FRÅGA: Finns mer flexibel lösning än att sätta fast höjd? Om man inte sätter fast höjd så bildas tomrum mellan bild och text vid resizing.
 Navigering horisontell med floatade li-taggar med iliggande a-taggar som blockelement för ökad klickyta.
+Färger togs fram från bilderna i kulor och photoshop. Jag kollade flera färger i båda för jag tycker mina färger
+ser gråare ut än de bifogade bilderna. Men när båda analyserar dem till samma hex-kod så gissar jag att det är rätt.
 */
 
 /*LAYOUT*/
@@ -12,19 +14,16 @@ Navigering horisontell med floatade li-taggar med iliggande a-taggar som blockel
     margin: 0;
     padding: 0;
 }
-body {
-    max-width: 1020px;
-    margin: 0 auto;
-}
 #container {
-    max-width: 960px;
+    max-width: 600px;
+    margin: 2em auto;
 }
 #topbar {
     text-align: right;
     height: 220px;
     background-image: url("pics/coffey.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 200px;
     background-position: bottom;
 }
 #menu>a {
@@ -56,7 +55,7 @@ body {
     clear: both;
 }
 ul {
-    padding: 0.5em 0 0 0;
+    padding: 0.5em 0 0 0.5em;
 }
 li {
     list-style-type: none;
@@ -84,8 +83,8 @@ border:
 #maincontent border-right: #c0c0c0
 
 */
-body{
-        background-color: #fcfaf4;
+ body {
+    background-color: #fcfaf4;
 }
 #topbar, #menu {
     background-color: #51473D;
@@ -101,6 +100,7 @@ body{
 }
 #topbar, #menu li a {
     color: #EAE7D2;
+    text-transform: capitalize;
 }
 #maincontent, #menu .active a, #subcontent p, #bottomcontent {
     color: #797066;
