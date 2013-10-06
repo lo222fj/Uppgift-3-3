@@ -39,7 +39,7 @@ placeringar (ex float) och ytor (marginaler och padding)*/
     background-position: bottom;
 }
 #menu ul {
-    padding: 0.5em 0 0 0.5em;
+    padding: 0.4em 0 0 0.8em;
 }
 #menu li {
     float: left;
@@ -138,6 +138,10 @@ li {
 #container {
     border: 0.1em #cecab9 solid;
 }
+#topbar{
+    font-style: italic;
+    font-size: 0.6em;
+}
 #menu>a {
     display:none;
 }
@@ -153,8 +157,6 @@ li {
 }
 #maincontent p {
     font-size: 0.8em;
-}
-#subcontent {
 }
 #subcontent h1, h2 {
     font-size: 1em;
